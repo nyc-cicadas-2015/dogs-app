@@ -4,6 +4,7 @@ get '/dogs' do
 end
 
 get '/dogs/new' do
+  @dog = Dog.new
   erb :'dogs/new'
 end
 
