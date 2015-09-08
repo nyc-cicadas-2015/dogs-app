@@ -1,6 +1,5 @@
-<h1>ehrmagerd: I'm a dog:</h1>
+<h1>Show #<%= @dog.id %></h1>
 
-<p><%= @dog.name %> | <%= @dog.breed %> </p>
-<p>This dog has a <%= DogSizeDeterminer.new(@dog).collar_size %> neck</p>
+<%= erb :'dogs/_dog', locals: { canine: @dog, time: Time.now } %>
 
 <a href="/dogs">Back to Dog List</a>
