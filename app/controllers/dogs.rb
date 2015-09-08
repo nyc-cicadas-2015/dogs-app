@@ -22,3 +22,9 @@ get '/dogs/:id/edit' do
   @dog = Dog.find(params[:id])
   erb :'/dogs/edit'
 end
+
+patch '/dogs/:id' do
+  dog = Dog.find(params[:id])
+  dog.update(params[:dog])
+  redirect "/dogs/#{dog.id}"
+end
