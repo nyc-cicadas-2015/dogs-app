@@ -1,0 +1,13 @@
+<div class="dog-display">
+  <header>
+    <h1 style="border: solid 1px green"><%= canine.name %></h1>
+  </header>
+  <body>
+    <%= canine.breed %>
+  </body>
+  <form action="/dogs/<%= canine.id %>" method="post">
+    <input type="hidden" name="_method" id="" value="delete" />
+    <input type="submit" name="" id="" value="Delete" />
+  </form>
+</div>
+

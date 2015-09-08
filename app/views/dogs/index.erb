@@ -1,5 +1,5 @@
 <% @dogs.each do |dog| %>
-  <li><%= dog.name %> | <%= dog.breed %> </li>
+  <%= erb :'dogs/_dog', locals: { canine: dog } %>
 <% end %>
 
 <a href="/dogs/new">Create a new Dog!</a>

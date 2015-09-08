@@ -1,6 +1,3 @@
-get '/' do
-  erb :welcome
-end
 
 # We have to GET a form so that we can POST its contents
 get '/form' do
@@ -20,13 +17,6 @@ end
 
 # Print the params "hash" as a string (shows up pretty in the browser)
 get '/params' do
-  params.to_s
-end
-
-# Passing parameters based on "placeholders" in the path
-get '/dogs/:breed/:name' do
-  # Imagine we could tie this to Active Record!
-  # Dog.where(name: params[:name], breed: params[:breed])
   params.to_s
 end
 
