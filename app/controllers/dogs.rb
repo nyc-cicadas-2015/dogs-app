@@ -13,7 +13,7 @@ get '/dogs/:id' do
   erb :'dogs/show'
 end
 
-post  '/dogs' do
+post '/dogs' do
   dog = Dog.create(params[:dog])
   redirect "/dogs/#{dog.id}"
 end
