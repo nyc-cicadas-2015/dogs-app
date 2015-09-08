@@ -20,13 +20,6 @@ get '/params' do
   params.to_s
 end
 
-# Passing parameters based on "placeholders" in the path
-get '/dogs/:breed/:name' do
-  # Imagine we could tie this to Active Record!
-  # Dog.where(name: params[:name], breed: params[:breed])
-  params.to_s
-end
-
 # Simple GET route with a passed variable
 get '/giraffe' do
   @adjective = "Surly"
