@@ -1,6 +1,3 @@
-get '/' do
-  erb :welcome
-end
 
 # We have to GET a form so that we can POST its contents
 get '/form' do
