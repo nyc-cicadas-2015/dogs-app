@@ -1,0 +1,4 @@
+<form action="/dogs/<%= @dog.id %>" method="post">
+  <input type="hidden" name="_method" id="" value="PATCH" />
+  <%= erb :"/dogs/_form", locals: { dog: @dog }  %>
+</form>

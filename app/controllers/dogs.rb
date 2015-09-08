@@ -18,3 +18,7 @@ post  '/dogs' do
   redirect "/dogs/#{dog.id}"
 end
 
+get '/dogs/:id/edit' do
+  @dog = Dog.find(params[:id])
+  erb :'/dogs/edit'
+end
