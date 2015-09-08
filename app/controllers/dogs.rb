@@ -28,3 +28,8 @@ patch '/dogs/:id' do
   dog.update(params[:dog])
   redirect "/dogs/#{dog.id}"
 end
+
+delete '/dogs/:id' do
+  Dog.find(params[:id]).destroy
+  redirect '/dogs'
+end
