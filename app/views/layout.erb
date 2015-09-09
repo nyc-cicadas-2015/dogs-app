@@ -20,6 +20,11 @@
   <title></title>
 </head>
 <body>
+
+<% if user_registered_name? %>
+  <h1>Hi there, <%= registered_name %></h1>
+<% end %>
+
 <div id="content">
   <header>
     <a href="/"><img src="/img/zenchinese.png" class="logo"></a>
