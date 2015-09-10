@@ -21,8 +21,8 @@
 </head>
 <body>
 
-<% if user_registered_name? %>
-  <h1>Hi there, <%= registered_name %></h1>
+<% if user_logged_in? %>
+  <h1>Hi there, <%= current_user.username %></h1>
 <% end %>
 
 <div id="content">

@@ -7,6 +7,10 @@ post '/new_visitor' do
   redirect "/dogs"
 end
 
+get '/sad_face' do
+  "(͡๏̯͡๏)"
+end
+
 get '/forget_me' do
   session[:visitor_name] = nil
   redirect "/dogs"

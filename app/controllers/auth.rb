@@ -38,13 +38,15 @@ end
 post '/login' do
   user_params = params[:user]
   user = User.find_by(username: user_params[:username])
-  if user.password == user_params[:password]
-    "yay"
+  if user && user.password == user_params[:password]
+    session[:user_id] = user.id
+    redirect '/dogs'
   else
-    "boo"
+    redirect '/sad_face'
   end
 end
 
-get '/signup' do
-  
+delete '/logout' do
+  session[:user_id] = nil
 end
+
