@@ -32,7 +32,17 @@ get '/derp' do
 end
 
 get '/login' do
-  
+  erb :"users/login"
+end
+
+post '/login' do
+  user_params = params[:user]
+  user = User.find_by(username: user_params[:username])
+  if user.password == user_params[:password]
+    "yay"
+  else
+    "boo"
+  end
 end
 
 get '/signup' do
