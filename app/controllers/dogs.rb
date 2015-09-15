@@ -1,5 +1,8 @@
 get '/dogs' do
   @dogs = Dog.all
+  if params[:mode] == 'hacker'
+    @hacker_mode = true
+  end
   erb :'dogs/index'
 end
 
