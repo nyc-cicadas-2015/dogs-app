@@ -13,7 +13,11 @@ end
 
 get '/dogs/:id' do
   @dog = Dog.find(params[:id])
-  erb :'dogs/show'
+  if request.xhr?
+    erb :'dogs/_dog', locals: {canine: @dog}, layout: false
+  else
+    erb :'dogs/show'
+  end
 end
 
 post '/dogs' do
