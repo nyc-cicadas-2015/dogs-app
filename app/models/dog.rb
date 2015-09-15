@@ -1,3 +1,4 @@
 class Dog < ActiveRecord::Base
-  # Remember to create a migration!
+  has_many :toy_ownerships
+  has_many :toys, through: :toy_ownerships
 end
