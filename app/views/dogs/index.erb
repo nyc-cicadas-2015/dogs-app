@@ -1,12 +1,6 @@
 <a id="new_dog_link" href="/dogs/new">Create a new Dog!</a>
 
-<div id="new_dog_form_holder">
-  <form method='post' action='/search'>
-    <label>Search</label>
-    <input type='text' name='search'></input>
-    <input type='submit' value='submit'></input>
-  </form>
-</div>
+<div id="new_dog_form_holder"></div>
 
 <div id='dog_park'>
   <% @dogs.each do |dog| %>
