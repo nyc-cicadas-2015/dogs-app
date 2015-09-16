@@ -1,8 +1,18 @@
-<% @dogs.each do |dog| %>
-  <%= erb :'dogs/_dog', locals: { canine: dog } %>
-<% end %>
+<a id="new_dog_link" href="/dogs/new">Create a new Dog!</a>
 
-<a href="/dogs/new">Create a new Dog!</a>
+<div id="new_dog_form_holder">
+  <form method='post' action='/search'>
+    <label>Search</label>
+    <input type='text' name='search'></input>
+    <input type='submit' value='submit'></input>
+  </form>
+</div>
+
+<div id='dog_park'>
+  <% @dogs.each do |dog| %>
+    <%= erb :'dogs/_dog', locals: { canine: dog } %>
+  <% end %>
+</div>
 
 <p><a id='hacker-mode' href="/dogs?mode=hacker">Change Background to Be Hacker Cool!</a></p>
 

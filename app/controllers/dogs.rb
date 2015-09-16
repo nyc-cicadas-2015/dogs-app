@@ -8,7 +8,7 @@ end
 
 get '/dogs/new' do
   @dog = Dog.new
-  erb :'dogs/new'
+  erb :'dogs/new', layout: !request.xhr?
 end
 
 get '/dogs/:id' do
@@ -22,7 +22,11 @@ end
 
 post '/dogs' do
   dog = Dog.create(params[:dog])
-  redirect "/dogs/#{dog.id}"
+  if request.xhr?
+    erb :'dogs/_dog', locals: {canine: dog}, layout: false
+  else
+    redirect "/dogs/#{dog.id}"
+  end
 end
 
 get '/dogs/:id/edit' do
